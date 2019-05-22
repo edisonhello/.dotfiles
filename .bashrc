@@ -15,9 +15,7 @@ export EDITOR="$VISUAL"
 alias cp='cp -i'
 alias mv='mv -i'
 alias jizz='sudo -s'
-alias node_debug='DEBUG=* node'
 alias weather='curl -4 wttr.in/Taipei'
-alias qwertyuiop='poweroff'
 alias g++S='g++ -W -Wall -Wextra -O2 -DWEAK -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
 alias g++D='g++ -W -Wall -Wextra -O2 -DWEAK -std=c++17'
 alias g++='g++ -W -Wall -Wextra -O2 -std=c++17'
@@ -27,7 +25,7 @@ alias dcj='~/dcj_tool/dcj.sh'
 
 alias open='xdg-open'
 
-source $HOME/.bash-powerline.sh
+source $HOME/Coding/.dotfiles/.bash-powerline.sh
 
 cvim(){
     if [ -f "$1" ]
