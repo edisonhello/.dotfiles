@@ -22,6 +22,7 @@ alias g++='g++ -W -Wall -Wextra -O2 -std=c++17'
 alias tmux='tmux -2'
 alias ctpl='cp ~/Coding/cpp/template/template.cpp'
 alias dcj='~/dcj_tool/dcj.sh'
+alias rclone='rclone -vvvv'
 
 alias open='xdg-open'
 
