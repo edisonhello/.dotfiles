@@ -28,7 +28,7 @@ alias open='xdg-open'
 
 source $HOME/Coding/.dotfiles/.bash-powerline.sh
 
-cvim(){
+cvim() {
     if [ -f "$1" ]
     then
         vim -c "/main(){" "$1"
@@ -36,4 +36,12 @@ cvim(){
         ctpl "$1"
         vim -c "/main(){" "$1"
     fi
+}
+
+pandocmdpdf() {
+	inputf=$1
+	shift
+	outputf=$(echo $inputf | sed 's/\.md/\.pdf/')
+	echo "Compiling $inputf to $outputf"
+	pandoc --latex-engine=xelatex --variable geometry="margin=0.5in" -s -f markdown $inputf -o $outputf $@
 }

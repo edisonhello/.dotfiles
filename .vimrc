@@ -26,20 +26,6 @@ set viminfo='100
 set backup
 set backupdir=~/.vim/backup
 
-" practice not to use array keys
-inoremap <LEFT> <NOP>
-inoremap <RIGHT> <NOP>
-inoremap <UP> <NOP>
-inoremap <DOWN> <NOP>
-nnoremap <LEFT> <NOP>
-nnoremap <RIGHT> <NOP>
-nnoremap <UP> <NOP>
-nnoremap <DOWN> <NOP>
-vnoremap <LEFT> <NOP>
-vnoremap <RIGHT> <NOP>
-vnoremap <UP> <NOP>
-vnoremap <DOWN> <NOP>
-
 " Global inoremaps
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap kj <ESC>
@@ -56,4 +42,6 @@ augroup END
 
 " Filetype different settings
 autocmd Filetype c,cpp,java  set cindent
-autocmd Filetype markdown    inoremap $aligned<ENTER> $$<ENTER>\begin{aligned}<ENTER>\end{aligned}<ENTER>$$<Esc>kko
+autocmd Filetype markdown    inoremap $aligned<ENTER> $$ \begin{aligned}<ENTER><ENTER><ENTER><ENTER>\end{aligned} $$<Esc>kki
+
+autocmd FileType tex syn region texMathZoneZ matchgroup=texStatement start="\\eqn{" start="\\eqns{" start="\\eqna{" start="\\eqnas{" matchgroup=texStatement end="}" end="%stopzone\>" contains=@texMathZoneGroup
