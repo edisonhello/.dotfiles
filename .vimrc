@@ -10,6 +10,7 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
+filetype indent on
 
 " Theme settings
 set background=dark
@@ -41,7 +42,7 @@ augroup AutoSaveFolds
 augroup END
 
 " Filetype different settings
-autocmd Filetype c,cpp,java  set cindent
-autocmd Filetype markdown    inoremap $aligned<ENTER> $$ \begin{aligned}<ENTER><ENTER><ENTER><ENTER>\end{aligned} $$<Esc>kki
+" autocmd Filetype c,cpp,java  set cindent
+" autocmd Filetype markdown    inoremap $aligned<ENTER> $$ \begin{aligned}<ENTER><ENTER><ENTER><ENTER>\end{aligned} $$<Esc>kki
 
 autocmd FileType tex syn region texMathZoneZ matchgroup=texStatement start="\\eqn{" start="\\eqns{" start="\\eqna{" start="\\eqnas{" matchgroup=texStatement end="}" end="%stopzone\>" contains=@texMathZoneGroup
