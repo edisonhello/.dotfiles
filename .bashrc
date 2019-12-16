@@ -56,4 +56,3 @@ clip(){
         echo "What do you want to copy? There's no such file."
     fi
 }
-
