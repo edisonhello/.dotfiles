@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Autojump
+[[ -s /home/edison/.autojump/etc/profile.d/autojump.sh ]] && source /home/edison/.autojump/etc/profile.d/autojump.sh
+source $HOME/.bash-powerline.sh
+
 alias ls='ls --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -28,7 +32,8 @@ alias ctpl='cp ~/Coding/cpp/template/template.cpp'
 
 alias open='xdg-open'
 
-source $HOME/Coding/.dotfiles/.bash-powerline.sh
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 
 cvim() {
     if [ -f "$1" ] 
