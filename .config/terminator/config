@@ -1,0 +1,80 @@
+[global_config]
+  always_split_with_profile = True
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+  title_transmit_bg_color = "#484848"
+  window_state = maximise
+[keybindings]
+  layout_launcher = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = New Profile
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[Coding]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = d3a04116-674b-4406-8c63-7bad3008b63b
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:27
+      size = 1920, 1016
+      title = edison@archlinux:~/Coding/cpp
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 322
+      ratio = 0.168146214099
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 773
+      ratio = 0.764589515331
+      type = VPaned
+    [[[terminal2]]]
+      directory = /home/edison/Coding/cpp
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = b0c10df8-8ee3-4c09-8c2f-3208ec8e41cc
+    [[[terminal4]]]
+      directory = /home/edison/Coding/cpp
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = d3a04116-674b-4406-8c63-7bad3008b63b
+    [[[terminal5]]]
+      directory = /home/edison/Coding/cpp
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = a3dcf27a-435a-4f37-82f4-7fa12fa0b2ba
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.6
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Meslo LG S DZ 15
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[Coding]]
+    cursor_color = "#aaaaaa"
+    login_shell = True

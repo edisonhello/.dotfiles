@@ -21,6 +21,7 @@ export EDITOR="$VISUAL"
 
 export HISTSIZE=10000
 
+alias vim='sl'
 alias weather='curl -4 wttr.in/Taipei'
 alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
 alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -std=c++17'
