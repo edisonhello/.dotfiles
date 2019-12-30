@@ -43,7 +43,7 @@ endif
 call plug#begin()
 
 source $HOME/.config/nvim/airline.vim
-Plug 'ctrlpvim/ctrlp.vim'
+source $HOME/.config/nvim/fzf.vim
 
 call plug#end()
 
