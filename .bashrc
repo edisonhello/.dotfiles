@@ -23,7 +23,7 @@ export HISTSIZE=10000
 
 alias vim='sl'
 alias weather='curl -4 wttr.in/Taipei'
-alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
+alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -g -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
 alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -std=c++17'
 alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -std=c++17'
 alias tmux='tmux -2'
@@ -34,6 +34,8 @@ alias ctpl='cp ~/Coding/cpp/template/template.cpp'
 alias open='xdg-open'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+export FZF_DEFAULT_COMMAND="find -L"
 
 
 cvim() {

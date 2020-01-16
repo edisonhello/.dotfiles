@@ -29,5 +29,6 @@ let g:airline_theme = 'owo' " bubblegum / night_owl / owo
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#branch#enabled=1
 
 let g:load_ctrlp = 1

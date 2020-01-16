@@ -59,8 +59,8 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+    awful.layout.suit.tile,
     awful.layout.suit.floating,
-    -- awful.layout.suit.tile,
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
@@ -256,7 +256,7 @@ awful.screen.connect_for_each_screen(function(s)
 			batwidget({ timeout = 30 }),
 			seperator,
             mytextclock,
-            -- s.mylayoutbox,
+            s.mylayoutbox,
         },
     }
 end)
@@ -594,6 +594,19 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+screen.connect_signal("arrange", function(s)
+    local layout = s.selected_tag.layout.name
+    local tiled_clients = #s.tiled_clients
+    for _, c in pairs(s.clients) do
+        if (layout == "floating" or (tiled_clients > 1 and layout ~= "max") or c.floating) and not c.maximized then
+            c.border_width = beautiful.border_width
+        else
+            c.border_width = 0
+        end
+    end
+end)
+
 
 -- }}}
 

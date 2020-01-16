@@ -25,6 +25,7 @@ inoremap kj <ESC>
 " Auto memorize folding
 augroup AutoSaveFolds
 	autocmd!
+	autocmd BufWinLeave *.* diffoff
 	autocmd BufWinLeave *.* mkview
 	autocmd BufWinEnter *.* silent! loadview
 augroup END
