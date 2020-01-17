@@ -16,7 +16,7 @@ filetype indent on
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
-set guicursor=n-v-c:block
+set guicursor=n-v-c-ve-o-i-r-ci-cr-sm-a:block
 
 " Global inoremaps
 inoremap {<CR>  {<CR>}<Esc>O
