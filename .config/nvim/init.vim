@@ -30,6 +30,13 @@ augroup AutoSaveFolds
 	autocmd BufWinEnter *.* silent! loadview
 augroup END
 
+augroup ChangeJSIndent
+	autocmd!
+	autocmd BufRead,BufNewFile *.js set ts=2
+	autocmd BufRead,BufNewFile *.js set sw=2
+	autocmd BufRead,BufNewFile *.js set et
+augroup END
+
 autocmd BufRead,BufNewFile *.tmuxtheme set filetype=tmux
 
 autocmd FileType tex syn region texMathZoneZ matchgroup=texStatement start="\\eqn{" start="\\eqns{" start="\\eqna{" start="\\eqnas{" matchgroup=texStatement end="}" end="%stopzone\>" contains=@texMathZoneGroup

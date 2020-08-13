@@ -63,3 +63,18 @@ clip(){
         echo "What do you want to copy? There's no such file."
     fi
 }
+
+# nvm settings
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+# pyenv settings
+export PATH="/home/edison/.pyenv/bin:$PATH"
+if which pyenv > /dev/null;
+    then eval "$(pyenv init -)";
+fi
+if which pyenv-virtualenv-init > /dev/null;
+    then eval "$(pyenv virtualenv-init -)";
+fi
+
