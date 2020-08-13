@@ -21,9 +21,17 @@ local function worker(args)
 			if (status == "Charging") then status = " CHR" else status = "" end
 			local hh, mm = time:match("(%d+):(%d+):%d+")
 			if hh == nil or mm == nil then
-				batwidget:set_text("BAT: " .. perc .. "%" .. status)
+				if tonumber(perc) <= 15 then 
+					batwidget:set_text("QAQ: " .. perc .. "%" .. status .. " LOW BATTERY QAQ")
+				else
+					batwidget:set_text("BAT: " .. perc .. "%" .. status)
+				end
 			else 
-				batwidget:set_text("BAT: " .. perc .. "%" .. status .. " " .. hh .. ":" .. mm)
+				if tonumber(perc) <= 15 then 
+					batwidget:set_text("QAQ: " .. perc .. "%" .. status .. " " .. hh .. ":" .. mm .. " LOW BATTERY QAQ")
+				else
+					batwidget:set_text("BAT: " .. perc .. "%" .. status .. " " .. hh .. ":" .. mm)
+				end
 			end
 		end
 	end, batwidget)

@@ -48,6 +48,8 @@ end
 -- {{{ Variable definitions
 beautiful.init("~/.config/awesome/theme/default/theme.lua")
 beautiful.notification_icon_size = 80
+beautiful.notification_max_height = 120
+beautiful.notification_max_width = 480
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
@@ -363,9 +365,9 @@ globalkeys = gears.table.join(
     awful.key({ "Shift" }, "Print", function() 
 		awful.util.spawn("maim -s '/home/edison/Pictures/Screenshots/" .. os.date("Screenshot %Y-%m-%d %H:%M:%S.png") .. "'") end),
     awful.key({ "Control" }, "Print", function() 
-		awful.util.spawn("maim --format png /dev/stdout | xclip -selection clipboard -t image/png -i") end),
+		awful.util.spawn("/home/edison/Scripts/Screenshot.sh") end),
     awful.key({ "Shift", "Control" }, "Print", function() 
-		awful.util.spawn("maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i") end),
+		awful.util.spawn("/home/edison/Scripts/Screenshot.sh -s") end),
 	-- Lock Screen
     awful.key({ modkey }, "l", function() awful.util.spawn("i3lock -e -c 000000") end)
 )

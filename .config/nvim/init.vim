@@ -9,7 +9,7 @@ set smarttab
 " set expandtab " do not replace tab with spaces
 set tabstop=4
 set shiftwidth=4
-set softtabstop=0
+set softtabstop=4
 filetype indent on
 
 " Theme settings
@@ -37,7 +37,15 @@ augroup ChangeJSIndent
 	autocmd BufRead,BufNewFile *.js set et
 augroup END
 
-autocmd BufRead,BufNewFile *.tmuxtheme set filetype=tmux
+augroup ChangeHTMLIndent
+	autocmd!
+	autocmd BufRead,BufNewFile *.html set ts=2
+	autocmd BufRead,BufNewFile *.html set sw=2
+	autocmd BufRead,BufNewFile *.html set et
+augroup END
+
+autocmd BufRead,BufNewFile,BufWinEnter *.tmuxtheme set filetype=tmux
+autocmd BufRead,BufNewFile,BufWinEnter *.ejs set filetype=html
 
 autocmd FileType tex syn region texMathZoneZ matchgroup=texStatement start="\\eqn{" start="\\eqns{" start="\\eqna{" start="\\eqnas{" matchgroup=texStatement end="}" end="%stopzone\>" contains=@texMathZoneGroup
 
