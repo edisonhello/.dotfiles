@@ -7,6 +7,7 @@
 
 # Autojump
 [[ -s /home/edison/.autojump/etc/profile.d/autojump.sh ]] && source /home/edison/.autojump/etc/profile.d/autojump.sh
+
 source $HOME/.bash-powerline.sh
 
 alias ls='ls --color=auto'
@@ -22,20 +23,21 @@ export EDITOR="$VISUAL"
 export HISTSIZE=10000
 
 alias weather='curl -4 wttr.in/Taipei'
-alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -g -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
-alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -DWEAK -std=c++17'
-alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -std=c++17'
+alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
+alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++17'
+alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -g -std=c++17'
 alias tmux='tmux -2'
 alias ctpl='cp ~/Coding/cpp/template/template.cpp'
 # alias dcj='~/dcj_tool/dcj.sh'
 # alias rclone='rclone -vvvv'
+
+alias ntu='cd ~/NTU/Spring2020'
 
 alias open='xdg-open'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export FZF_DEFAULT_COMMAND="find -L"
-
 
 cvim() {
     if [ -f "$1" ] 
@@ -64,17 +66,19 @@ clip(){
     fi
 }
 
+PATH=$HOME/bin:$PATH
+
 # nvm settings
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+# export NVM_DIR=~/.nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# [ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 # pyenv settings
 export PATH="/home/edison/.pyenv/bin:$PATH"
-if which pyenv > /dev/null;
+if which pyenv > /dev/null 2>&1;
     then eval "$(pyenv init -)";
 fi
-if which pyenv-virtualenv-init > /dev/null;
+if which pyenv-virtualenv-init > /dev/null 2>&1;
     then eval "$(pyenv virtualenv-init -)";
 fi
 

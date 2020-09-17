@@ -5,6 +5,7 @@
   title_transmit_bg_color = "#484848"
   window_state = maximise
 [keybindings]
+  help = None
   layout_launcher = None
   resize_down = None
   resize_left = None
@@ -70,11 +71,12 @@
     background_darkness = 0.6
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Meslo LG S DZ 15
+    font = Meslo LG M DZ 15
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
   [[Coding]]
     cursor_color = "#aaaaaa"
+    font = Cantarell Bold 10
     login_shell = True
