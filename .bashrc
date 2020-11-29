@@ -82,3 +82,9 @@ if which pyenv-virtualenv-init > /dev/null 2>&1;
     then eval "$(pyenv virtualenv-init -)";
 fi
 
+export SPRING_HOME=$HOME/libs/spring-2.3.3.RELEASE
+PATH=$HOME/libs/spring-2.3.3.RELEASE/bin:$PATH
+
+# volta settings
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

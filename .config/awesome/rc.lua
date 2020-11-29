@@ -230,6 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
     -- Add widgets to the wibox
+	local coinwidget = require("widgets.coin-widget")
 	local cpuwidget = require("widgets.cpu-widget")
 	local memwidget = require("widgets.mem-widget")
 	local batwidget = require("widgets.bat-widget")
@@ -247,15 +248,21 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- wibox.widget.systray(),
+			coinwidget({ timeout = 5 }),
+			seperator,
+			coinwidget({ timeout = 5, symbol = "ETHUSDT", short = "ETH", prec = 2 }),
+			seperator,
+			coinwidget({ timeout = 5, symbol = "LINKUSDT", short = "LINK", prec = 4 }),
+			seperator,
 			myxblwidget,
 			seperator,
 			myvolwidget,
 			seperator,
-			cpuwidget({ timeout = 10 }), 
+			cpuwidget({ timeout = 5 }), 
 			seperator,
-			memwidget({ timeout = 15 }),
+			memwidget({ timeout = 5 }),
 			seperator,
-			batwidget({ timeout = 30 }),
+			batwidget({ timeout = 5 }),
 			seperator,
             mytextclock,
             s.mylayoutbox,
