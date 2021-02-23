@@ -9,6 +9,7 @@
 [[ -s /home/edison/.autojump/etc/profile.d/autojump.sh ]] && source /home/edison/.autojump/etc/profile.d/autojump.sh
 
 source $HOME/.bash-powerline.sh
+source $HOME/.git-completion.bash
 
 alias ls='ls --color=auto'
 alias cp='cp -i'
@@ -31,7 +32,7 @@ alias ctpl='cp ~/Coding/cpp/template/template.cpp'
 # alias dcj='~/dcj_tool/dcj.sh'
 # alias rclone='rclone -vvvv'
 
-alias ntu='cd ~/NTU/Spring2020'
+alias ntu='cd ~/NTU/Spring2021'
 
 alias open='xdg-open'
 
@@ -67,6 +68,7 @@ clip(){
 }
 
 PATH=$HOME/bin:$PATH
+PATH=$HOME/Scripts:$PATH
 
 # nvm settings
 # export NVM_DIR=~/.nvm
@@ -88,3 +90,4 @@ PATH=$HOME/libs/spring-2.3.3.RELEASE/bin:$PATH
 # volta settings
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
