@@ -91,3 +91,5 @@ PATH=$HOME/libs/spring-2.3.3.RELEASE/bin:$PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# set bash to vim mode
+set -o vi 
