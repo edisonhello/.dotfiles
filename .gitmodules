@@ -1,0 +1,3 @@
+[submodule "libs/tmux-resurrect"]
+	path = libs/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
