@@ -18,7 +18,7 @@ alias mv='mv -i'
 PS1='[\u@\h \W]\$ '
 
 export TERM=xterm-256color
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 export HISTSIZE=10000
@@ -29,12 +29,14 @@ alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++17'
 alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -g -std=c++17'
 alias tmux='tmux -2'
 alias ctpl='cp ~/Coding/cpp/template/template.cpp'
+alias find='find | grep'
 # alias dcj='~/dcj_tool/dcj.sh'
 # alias rclone='rclone -vvvv'
 
 alias ntu='cd ~/NTU/Spring2021'
 
 alias open='xdg-open'
+alias reset-keyboard-repeat='xset r rate 220 30'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -67,8 +69,17 @@ clip(){
     fi
 }
 
+share_file() {
+    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
+	echo ""
+}
+
+alias share=share_file
+
+
 PATH=$HOME/bin:$PATH
 PATH=$HOME/Scripts:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 # nvm settings
 # export NVM_DIR=~/.nvm
@@ -90,6 +101,10 @@ PATH=$HOME/libs/spring-2.3.3.RELEASE/bin:$PATH
 # volta settings
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# deno settings
+export DENO_INSTALL="/home/edison/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # set bash to vim mode
 set -o vi 
