@@ -76,7 +76,7 @@ call plug#begin()
 
 source $HOME/.config/nvim/airline.vim
 source $HOME/.config/nvim/fzf.vim
-source $HOME/.config/nvim/typescript.vim
+" source $HOME/.config/nvim/typescript.vim
 source $HOME/.config/nvim/clang-format.vim
 source $HOME/.config/nvim/ack-ag.vim
 
