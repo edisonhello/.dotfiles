@@ -38,6 +38,7 @@ alias ntu='cd ~/NTU/Spring2021'
 alias open='xdg-open'
 alias reset-keyboard-repeat='xset r rate 220 30'
 
+alias dfs='dotfiles'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export FZF_DEFAULT_COMMAND="find -L"
