@@ -7,13 +7,21 @@ dotfiles submodule update --init
 dotfiles checkout
 ```
 
+In nvim:
+
+```
+:CocInstall coc-clangd
+```
+
 ## Dependencies
 
 * tmux
 * neovim
 	* fzf
 		* rg (ripgrep)
+* node
 * clang-format
+* clangd
 
 ## TODO
 

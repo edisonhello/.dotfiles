@@ -79,5 +79,7 @@ source $HOME/.config/nvim/fzf.vim
 " source $HOME/.config/nvim/typescript.vim
 source $HOME/.config/nvim/clang-format.vim
 source $HOME/.config/nvim/ack-ag.vim
+source $HOME/.config/nvim/coc.vim
+
 
 call plug#end()
