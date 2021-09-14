@@ -29,7 +29,6 @@ alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++17'
 alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -g -std=c++17'
 alias tmux='tmux -2'
 alias ctpl='cp ~/Coding/cpp/template/template.cpp'
-alias find='find | grep'
 # alias dcj='~/dcj_tool/dcj.sh'
 # alias rclone='rclone -vvvv'
 
@@ -40,6 +39,8 @@ alias reset-keyboard-repeat='xset r rate 220 30'
 
 alias dfs='dotfiles'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias check_80width='grep ".\{81,\}" * -r'
 
 export FZF_DEFAULT_COMMAND="find -L"
 
@@ -81,6 +82,7 @@ alias share=share_file
 PATH=$HOME/bin:$PATH
 PATH=$HOME/Scripts:$PATH
 PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/bin/depot_tools:$PATH # for Google work
 
 # nvm settings
 # export NVM_DIR=~/.nvm

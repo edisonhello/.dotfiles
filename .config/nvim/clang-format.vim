@@ -3,8 +3,7 @@
 if executable('clang-format')
   Plug 'rhysd/vim-clang-format'
 
-  let g:clang_format#style_options = {
-        \ "ColumnLimit": 75 }
+  " let g:clang_format#style_options = { }
 
   " map to <Leader>cf in C++ code
   autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>

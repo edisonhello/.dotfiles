@@ -12,6 +12,11 @@ set shiftwidth=2
 set softtabstop=2
 filetype indent on
 
+set colorcolumn=+1        " highlight column after 'textwidth'
+set colorcolumn=+1,+2,+3  " highlight three columns after 'textwidth'
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+set colorcolumn=80
+
 set splitright
 set splitbelow
 
