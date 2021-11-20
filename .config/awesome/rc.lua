@@ -107,15 +107,18 @@ mytextclock = wibox.widget.textclock("%Y-%m-%d (%a) %H:%M:%S ", 1)
 -- Create volume widget
 local myvolwidget, myxblwidget = wibox.widget.textbox(), wibox.widget.textbox()
 function UpdateVOL()
-	local f = io.popen("amixer get Master | grep 'Mono:'")
+	local ntime = os.clock() + 0.2
+	repeat until os.clock() > ntime
+
+	local f = io.popen("amixer get Master")
 	local res = f:read("*a")
 	f:close()
-	local vol, status = res:match("%[(%d+)%%%] %[[^]]*%] %[(%g+)%]")
+	local vol, status = res:match("%[([^]]*)%] %[(%g+)%]")
 
 	if (status == "on") then
-		myvolwidget:set_text("VOL: " .. vol .. "%")
+		myvolwidget:set_text("VOL: " .. vol .. "")
 	else 
-		myvolwidget:set_text("VOL: MUTE (" .. vol .. "%)")
+		myvolwidget:set_text("VOL: MUTE (" .. vol .. ")")
 	end
 end
 function UpdateXBL()

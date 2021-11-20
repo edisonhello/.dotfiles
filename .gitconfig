@@ -14,8 +14,16 @@ rbc = rebase --continue
 rbi = rebase -i 
 cam = commit --amend
 
+rbi = "rebase -i"
+rbc = "rebase --continue"
+cam = "commit --amend"
+stu = "status"
+sts = "stash"
+
 ignore = update-index --skip-worktree
 unignore = update-index --no-skip-worktree
 
 [pull]
-	rebase = false
+	rebase = true
+[help]
+	autocorrect = 1
