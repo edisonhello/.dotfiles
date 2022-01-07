@@ -9,16 +9,13 @@ lgoc = log --graph --abbrev-commit --decorate --no-color --format=format:'%C(bol
 lg = !"git lg1"
 commit = commit -s
 
-ada = add .
-rbc = rebase --continue
-rbi = rebase -i 
-cam = commit --amend
-
+ada = "add ."
 rbi = "rebase -i"
 rbc = "rebase --continue"
 cam = "commit --amend"
 stu = "status"
 sts = "stash"
+crr = "!git gc --prune=now && git remote prune $1 && git fetch $1 && :"
 
 ignore = update-index --skip-worktree
 unignore = update-index --no-skip-worktree
