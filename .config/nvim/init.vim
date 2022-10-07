@@ -29,6 +29,7 @@ set guicursor=n-v-c-ve-o-i-r-ci-cr-sm-a:block
 " Global inoremaps
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap kj <ESC>
+nnoremap <silent> <SPACE>fs :w<Enter>
 
 " Auto save view
 augroup AutoSaveViews
@@ -86,5 +87,19 @@ source $HOME/.config/nvim/clang-format.vim
 source $HOME/.config/nvim/ack-ag.vim
 source $HOME/.config/nvim/coc.vim
 
+Plug 'github/copilot.vim'
+
+Plug 'preservim/nerdtree' " NERDTree part
+nmap <silent> <leader>t :NERDTreeToggle<CR>
+nmap <silent> <F5> :NERDTreeToggle<CR>
+nmap <silent> <leader>rr :NERDTreeRefreshRoot<CR>
+let NERDTreeShowHidden=1
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+			\ quit | endif
+
+" File history preview
+Plug 'mbbill/undotree'
+nnoremap <F6> :UndotreeToggle<CR>
 
 call plug#end()
