@@ -24,9 +24,9 @@ export EDITOR="$VISUAL"
 export HISTSIZE=10000
 
 alias weather='curl -4 wttr.in/Taipei'
-alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++17 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
-alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++17'
-alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -g -std=c++17'
+alias g++S='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++20 -fsanitize=address -fsanitize=undefined -fsanitize=leak'
+alias g++D='g++ -W -Wall -Wextra -Wpedantic -O2 -g -DWEAK -std=c++20'
+alias g+++='g++ -W -Wall -Wextra -Wpedantic -O2 -g -std=c++20'
 alias tmux='tmux -2'
 alias ctpl='cp ~/Coding/cpp/template/template.cpp'
 # alias dcj='~/dcj_tool/dcj.sh'

@@ -24,3 +24,5 @@ unignore = update-index --no-skip-worktree
 	rebase = true
 [help]
 	autocorrect = 1
+[push]
+	default = upstream
