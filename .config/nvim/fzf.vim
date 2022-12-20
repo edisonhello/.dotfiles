@@ -14,6 +14,8 @@ if executable('fzf')
   nnoremap <leader>G :Rg
   " Switch to opened tab
   nnoremap <leader>w :W<CR>
+  " Find files in current directory
+  nnoremap <leader>b :Buffers<CR> 
   
   command! -bang -nargs=* Rg
     \ call fzf#vim#grep(

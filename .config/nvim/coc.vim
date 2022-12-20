@@ -148,11 +148,15 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Coc-clangd specified
+nmap <silent> ,en <Plug>(coc-diagnostic-next-error)
 
+" Coc-clangd specified
+"
 " Switch header
+nmap ,ga :<C-u>CocCommand clangd.switchSourceHeader<CR>
 nmap <leader>ha :<C-u>CocCommand clangd.switchSourceHeader<CR>
 
+" coc extensions list
 let g:coc_global_extensions = [
 \ 'coc-tabnine',
 \ 'coc-clangd'

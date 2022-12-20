@@ -9,6 +9,9 @@ if executable('clang-format')
   autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
   autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
-  " Toggle auto formatting:
+  " Toggle auto formatting
   nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+  " Format when saving the file
+  let g:clang_format#auto_format=1
 endif

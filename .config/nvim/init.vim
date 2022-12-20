@@ -28,8 +28,7 @@ set guicursor=n-v-c-ve-o-i-r-ci-cr-sm-a:block
 
 " Global inoremaps
 inoremap {<CR>  {<CR>}<Esc>O
-inoremap kj <ESC>
-nnoremap <silent> <SPACE>fs :w<Enter>
+inoremap <silent> kj <ESC>
 
 " Auto save view
 augroup AutoSaveViews
@@ -62,6 +61,9 @@ cabbrev delview <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Delview' : 'delvie
 " https://stackoverflow.com/questions/28384159/vim-how-to-remove-clear-views-created-by-mkview-from-inside-of-vim
 " Now, if syntax has broken, :delview then :noa wq then re-open the file
 
+command Bdelother :bd! | e#
+cabbrev bdelother <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Bdelother' : 'bdelother')<CR>
+
 autocmd BufRead,BufNewFile,BufWinEnter *.tmuxtheme set filetype=tmux
 autocmd BufRead,BufNewFile,BufWinEnter *.ejs set filetype=html
 
@@ -89,17 +91,54 @@ source $HOME/.config/nvim/ack-ag.vim
 
 Plug 'github/copilot.vim'
 
-Plug 'preservim/nerdtree' " NERDTree part
-nmap <silent> <leader>t :NERDTreeToggle<CR>
+" NERDTree
+Plug 'preservim/nerdtree'
+" nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <F5> :NERDTreeToggle<CR>
 nmap <silent> <leader>rr :NERDTreeRefreshRoot<CR>
+nmap <silent> <leader><F5> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
 			\ quit | endif
+" Close the tab if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') > 1 && !len(filter(tabpagebuflist(), 'getbufvar(v:val,"&ft") != "nerdtree"')) | tabclose | endif
+" Auto open NERDTree in every window
+" autocmd VimEnter * NERDTree
+" autocmd BufWinEnter * NERDTreeMirror
 
 " File history preview
 Plug 'mbbill/undotree'
 nnoremap <F6> :UndotreeToggle<CR>
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'ntpeters/vim-better-whitespace'
+
+Plug 'preservim/tagbar'
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'AndrewRadev/linediff.vim'
+map <silent> <leader>== :Linediff<CR>
+map <silent> <leader>=<backspace> :LinediffReset<CR>
+
+" Snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 call plug#end()
