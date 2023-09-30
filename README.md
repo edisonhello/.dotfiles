@@ -23,6 +23,12 @@ In nvim:
 * clang-format
 * clangd
 
+To install these:
+
+```
+sudo apt install neovim htop tmux nodejs clang-format clangd fzf ripgrep
+```
+
 ## TODO
 
 * Maybe ctrlp is overlap with fzf?
