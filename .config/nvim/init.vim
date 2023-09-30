@@ -87,7 +87,7 @@ source $HOME/.config/nvim/fzf.vim
 " source $HOME/.config/nvim/typescript.vim
 source $HOME/.config/nvim/clang-format.vim
 source $HOME/.config/nvim/ack-ag.vim
-" source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/coc.vim
 
 Plug 'github/copilot.vim'
 
@@ -114,6 +114,7 @@ nnoremap <F6> :UndotreeToggle<CR>
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'wakatime/vim-wakatime'
 
 Plug 'preservim/tagbar'
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
@@ -140,5 +141,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+Plug 'chrisbra/Recover.vim'
 
 call plug#end()
