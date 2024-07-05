@@ -114,7 +114,7 @@ nnoremap <F6> :UndotreeToggle<CR>
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 Plug 'preservim/tagbar'
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
