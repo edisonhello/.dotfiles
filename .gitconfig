@@ -17,8 +17,8 @@ crr = "!git gc --prune=now && git remote prune $1 && git fetch $1 && :"
 
 ignore = update-index --skip-worktree
 unignore = update-index --no-skip-worktree
-acp = "!git add -A && git commit -m 'script commit' && git push"
-upd-dep = "!git commit --allow-empty -m 'Update repository dependencies' && git push"
+acp = "!git add -A && git commit -m 'script commit' -n && git push"
+upd-dep = "!git commit --allow-empty -m 'Update repository dependencies' -n && git push"
 
 [pull]
 	rebase = true
@@ -27,3 +27,5 @@ upd-dep = "!git commit --allow-empty -m 'Update repository dependencies' && git 
 [push]
 	default = upstream
 	autoSetupRemote = true
+[rerere]
+	enabled = true

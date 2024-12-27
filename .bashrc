@@ -78,16 +78,15 @@ share_file() {
 
 alias share=share_file
 
-
 PATH=$HOME/bin:$PATH
 PATH=$HOME/Scripts:$PATH
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/bin/depot_tools:$PATH # for Google work
 
 # nvm settings
-# export NVM_DIR=~/.nvm
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-# [ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 # pyenv settings
 export PATH="/home/edison/.pyenv/bin:$PATH"
@@ -98,6 +97,7 @@ if which pyenv-virtualenv-init > /dev/null 2>&1;
     then eval "$(pyenv virtualenv-init -)";
 fi
 
+# spring settings
 export SPRING_HOME=$HOME/libs/spring-2.3.3.RELEASE
 PATH=$HOME/libs/spring-2.3.3.RELEASE/bin:$PATH
 
@@ -110,4 +110,8 @@ export DENO_INSTALL="/home/edison/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # set bash to vim mode
-set -o vi 
+set -o vi
+
+# cargo settings
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+

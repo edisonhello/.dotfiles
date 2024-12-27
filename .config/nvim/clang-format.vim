@@ -13,7 +13,7 @@ if executable('clang-format')
   nmap <Leader>C :ClangFormatAutoToggle<CR>
 
   " Format when saving the file
-  " let g:clang_format#auto_format=1
+  " let g:clang_format#auto_format=0
 
   autocmd FileType c,cpp,objc ClangFormatAutoEnable
 endif
