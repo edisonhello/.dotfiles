@@ -115,3 +115,5 @@ set -o vi
 # cargo settings
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
