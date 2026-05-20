@@ -42,7 +42,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias check_80width='grep ".\{81,\}" * -r'
 
-export FZF_DEFAULT_COMMAND="find -L"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/**" --glob "!node_modules/**" --glob "!dist/**" --glob "!build/**"'
 
 cvim() {
     if [ -f "$1" ] 
